@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>对象封装类</title>
+</head>
+<body>
+    
+    <script>
+
+        // function Student(name, age, sex){
+        //     //  var this = {
+        //     //      name : ""
+        //     //      age : 
+        //     //  };
+        //     this.name = name;
+        //     this.age = age;
+        //     this.sex = sex;
+        //     this.grade = 2018;
+        //     // return this;
+        // }    
+
+        // var student = new Student('zhangsan', 18, 'female');
+
+        
+
+    function Person(name, height){
+        // var this = {}
+        this.name = name;
+        this.height = height;
+        this.say = function(){
+            console.log(this.say)
+        }
+        return 123;
+        // return this;
+    }
+
+    var person =  new Person('xiaowang' ,180);
+    var person1 = new Person('xiaozhang', 175);
+    
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

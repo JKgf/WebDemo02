@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>倒计时</title>
+</head>
+<body>
+    <h1 id="time"></h1>
+    <script>
+        
+        window.onload = function(){
+		var tDom = document.getElementById("time");
+		
+		function start(y,m,d){
+			var time = new Date();//当前时间
+			var end = new Date(y,m-1,d);//截止时间
+			var t = end.getTime()-time.getTime();//时间差毫秒
+			var sec = t/1000;//获取秒数
+
+			//获取剩余多少天
+			var day = Math.floor(sec/60/60/24);//Math.floor()向下取整
+			//获取剩余多少小时
+			var hh = Math.floor(sec/60/60%24);
+			//获取剩余多少分钟
+			var mm = Math.floor(sec/60%60);
+			//获取剩余多少秒
+			var ss = Math.floor(sec%60);
+			
+			var html = "距离【"+end.getFullYear()+"年"+(end.getMonth()+1)+"月"+end.getDate()+"号】还有"+day+"天"+hh+"小时"+mm+"分钟"+ss+"秒";
+			tDom.innerHTML = html;
+		};
+		start(2019,2,22);
+		setInterval(function(){
+			start(2019,2,22);
+		},1000);
+	};
+    
+    </script>
+
+
+</body>
+</html>

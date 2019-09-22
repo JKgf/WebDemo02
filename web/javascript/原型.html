@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // // Person.prototype         --原型
+        // // Person.prototype = {}    --是祖先
+        // Person.prototype.name = "hehe";
+        // function Person(){
+
+        // }
+        // var person = new Person();
+        // var person1 = new Person();
+
+        // 公共属性可以用原型表示
+        // Car.prototype.height = 1400
+        // Car.prototype.lang = 4900;
+        // Car.prototype.carName = "BMW";
+        // Car.prototype = {
+        //     height : 1400,
+        //     lang : 4900,
+        //     carName : "BMW"
+        // }
+
+        // function Car(owner, color){
+        //      this.owner = owner;
+        //      this.color = color;
+        // }
+        // var car = new Car('red', "hehe");
+
+        function Person(){
+
+        }
+        Car.prototype = {
+            constructor : Person  // 可以修改constructor的属性
+        }
+        function Car(){
+           
+        }
+        var car = new Car();
+        console.log(car.constructor);
+
+
+
+
+         // Person.prototype.name = "abc";
+        // function Person(){
+        //     // var this = {
+        //     //    __proto__ : Person.prototype
+        //     // };           
+        // }
+        // var person = new Person();
+        // console.log(person.name);
+        // console.log(person.__proto__);// 查看原型
+
+
+
+        // Person.prototype.name = "abc";
+        // function Person(){
+        //     // var this = {
+        //     //      __proto__ : Person.prototype
+        //     // }
+        // }
+        // var obj = {
+        //     name : "sunny"
+        // }
+        // var person = new Person();
+        // person.__proto__ = obj;
+        // console.log(person.name); // sunny
+        // // perosn.name先在person里面寻找name属性没有的话再寻找__proto__属性的指向
+
+
+
+        // Person.prototype.name = 'sunny';
+        // function Person(){
+
+        // }
+        // var person = new Person();
+        // Person.prototype.name = 'cherry';
+        // console.log(person.name);// cherry
+
+        
+        // Person.prototype.name = 'sunny';
+        // function Person(){
+        //     // var this = { __proto__ : Person.prototype}
+        // }
+        // var person = new Person();
+        // Person.prototype = {
+        //     name : 'cherry'
+        // }
+        // console.log(person.name);// sunny
+
+        // // var obj = {name:"a"};
+        // // var obj1 = obj;
+        // // obj = {name : "b"}
+
+        // // 实现过程
+        // Person.prototype = {name : "sunny"};
+        // __proto__ = Person.prototype;
+        // Person.prototype = {name : "cherry"}
+
+
+
+        // Person.prototype.name = 'sunny';
+        // function Person(){
+        //     // var this = {__proto__ : Person.prototype}
+        // }
+        // Person.prototype = {
+        //     name : 'cherry'
+        // }
+        // var person = new Person();
+        // console.log(person.name);// cherry
+
+
+
+
+    </script>
+</body>
+</html>

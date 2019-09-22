@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <input type="text" value="1">
+        <input type="text" value="2">
+        <input type="text" value="3">
+        <input type="text" value="4">
+        <input type="text" value="5">
+    </div>
+
+    <input type="button" value="排序" onclick = "sort();"/>
+
+    <script>
+        function sort(){
+            var boxDom = document.getElementById("box");
+            var inputs = boxDom.children;
+            var arr = [];
+            var len = inputs.length;
+            for(var i = 0; i < len; i++){
+                arr.push(inputs[i]);
+            }
+            arr.sort(function(a, b){
+                return b.value - a.value;
+            });
+
+            boxDom.innerHTML = "";
+            for(var i = 0; i < arr.length; i++){
+                boxDom.appendChild(arr[i]);
+            }
+
+        };    
+        
+    </script>
+</body>
+</html>

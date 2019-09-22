@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-router</title>
+    <script src="./vue.js"></script>
+    <script src="./vue-router.js"></script>
+</head>
+<body>
+    
+
+
+    <div id="div1">
+        <router-link to="/a">page1</router-link>
+        <router-link to="/b">page2</router-link>
+        <router-link to="/c">page3</router-link>
+        <br>
+        文字
+        <!-- 路由容器 -->
+        <router-view></router-view>
+    </div>
+
+
+    <script>
+        // 路由表
+        let router = new VueRouter({
+            routes: [
+                {
+                    path: '/a',
+                    component:{template:'<div>aaaaaa</div>'}
+                },
+                {
+                    path: '/b',
+                    component:{template:'<div>bbbbbb</div>'}
+                },
+                {
+                    path: '/c',
+                    component:{template:'<div>cccccc</div>'}
+                }
+            ]
+        })
+    let vm = new Vue({
+        el: "#div1",
+        data: {},
+        router
+    });
+    
+    
+    </script>
+
+
+
+</body>
+</html>

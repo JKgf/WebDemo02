@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>继承模式</title>
+</head>
+<body>
+    
+
+
+
+
+    <script>
+
+        /*
+        
+                            继承发展史
+        1.传统形式-->原型链
+            * 过多的继承了没有的属性
+
+        2.借用构造函数
+            * 不能继承借用构造函数的原型
+            * 每次构造函数都要多走一个函数
+
+        3.共享原型
+            * 不能随便改动自己的原型
+
+        4. 圣杯模式
+
+            function F(){}
+            F.prototype = Father.prototype;
+            Son.prototype = new F();
+
+        */
+
+
+
+
+
+
+
+
+
+
+
+    
+        // Grand.prototype.lastName = "ji";
+        // function Grand(){
+
+        // }
+
+        // var grand = new Grand();
+
+        // Father.prototype = grand;
+        // function Father(){
+
+        // }
+
+        // var father = new Father();
+
+        // Son.prototype = father;
+        // function Son(){
+
+        // }
+
+        // var son = new Som();
+
+
+
+
+
+        // function Perosn(name, age, sex){
+        //     this.name = name;
+        //     this.age = age;
+        //     this.sex = sex;
+        // }
+
+        // function Student(name, age, sex, grade){
+        //     Person.call(this, name, age, sex);
+        //     this.grade = grade;
+        // }
+
+        // var student = new Student();
+
+
+
+
+
+
+
+
+        // Father.prototype.lastName = "hello";
+        // function Father(){
+
+        // }
+        // function Son(){
+
+        // }
+        // function inherit(Target, Orgin){
+        //     Target.prototype = Orgin.prototype;
+        // }
+
+        // inherit(Son, Father);
+        // var son = new Son();
+
+
+
+
+
+
+
+
+
+        // 圣杯模式***
+
+        function inherit(Target, Orgin){
+            function F(){};
+            F.prototype = Orgin.prototype;
+            Target.prototype = new F();
+            Target.prototype.constructor = Target;
+            Target.prototype.uber = Orgin.prototype;
+        }
+        Father.prototype.lastName = "hello";
+        function  Father(){};
+        function Son(){};
+        inherit(Son, Father);
+        var son = new Son();
+        var father = new Father();
+
+
+        // YUI3
+
+
+
+
+
+
+
+
+
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

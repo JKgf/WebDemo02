@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+
+        function Person(name, age){
+            // this == obj
+            this.name = name;
+            this.age = age;
+        }
+        var person = new Person('she', 100);
+
+        var obj = {};
+
+        Person.call(obj, 'he', 300);
+
+        // test() ------>  test.call();
+
+
+
+
+        function Person(){
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        
+        function Student(name, age, sex, tel, grade){
+            // var this = {name : "", age : "", sex : ""}
+            // Person.call(this, name, age, sex);
+            Person.apply(this, [name, age, sex]);
+            this.tel = tel;
+            this.grade = grade;
+        }
+
+        var student = new Student('sunny', 123, 'male', 123, 2017);
+        
+        // call, apply改变this指向  
+        // call 需要把实参按照形参的个数传进去
+        // apply 需要传一个arguments
+        // javascript 可计算的范围小数点前十六位小数点后十六位
+
+        
+    
+    </script>
+
+
+</body>
+</html>

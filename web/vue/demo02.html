@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue 基础</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    
+<!-- 
+<div id="div1">
+
+    <strong :title = 'age+"岁"'>
+        {{name}}
+    </strong>
+</div>
+
+<script>
+    
+  let vm = new Vue({
+      el: '#div1',
+      data: {
+          name: 'blue',
+          age: 18
+      }
+  })
+    
+</script> -->
+
+
+
+
+
+
+<!-- <div id="div1">
+    <input type="text" name="" id="" v-model="name">
+    <p>
+        {{name}}
+    </p>
+</div>
+
+<script>
+let vm = new Vue({
+    el: '#div1',
+    data: {
+        name: 'blue'
+    }
+})
+
+</script> -->
+
+
+
+
+
+<!-- 
+<div id="div">
+    <input type="text" v-model="n1">+
+    <input type="text" v-model="n2">=
+    {{parseInt(n1)+parseInt(n2)}}
+</div>
+<script>
+let vm = new Vue({
+    el: '#div',
+    data:{
+        n1:1,
+        n2:0
+    }
+})
+</script>
+ -->
+
+
+
+
+
+
+<!-- 
+<div id="div1">
+    <div v-html="str"></div>
+</div>
+<script>
+let vm = new Vue({
+    el: '#div1',
+    data: {
+        str: '<p>hello world1</p><p>hello world1</p><p>hello world1</p>'
+    }
+});
+</script> 
+-->
+
+
+
+
+
+<!-- 
+<div id="div">
+    {{a}}
+    <input type="button" value="+1" @click="fn(10)">
+</div>
+<script>
+let vm = new Vue({
+    el: '#div',
+    data: {
+        a:1
+    },
+    methods:{
+        fn(n){
+            this.a+=n;
+        }
+    }
+})
+</script>
+ -->
+
+<!-- 
+ <div id="div">
+    <input type="button" value="显示隐藏" @click="fn()">
+    <div class="box" v-show="b" style="width:200px;height:200px;background-color:red;"></div>
+    // v-if:删除元素  
+    // v-show: display
+</div>
+<script>
+let vm = new Vue({
+    el:'#div',
+    data:{
+        b:true,
+    },
+    methods:{
+        fn(){
+            this.b = !this.b;
+        }
+    }
+})
+</script>
+ -->
+
+
+
+
+
+ <!-- <div id="div">
+     <ul>
+         <li v-for="user,index in users" :key='user.id'>
+             {{index}}.用户名:{{user.name}} 密码:{{user.password}}
+         </li>
+     </ul>
+ </div>
+ <script>
+ let vm = new Vue({
+     el:'#div',
+     data: {
+         users: [
+             {id:1, name: "blue", password: '123456'},
+             {id:3, name: "zhangsan", password: '483973'},
+             {id:7, name: 'lisi', password: '378560'}
+         ]
+     }
+ })
+ </script> -->
+
+
+
+
+
+
+<div id="div">
+    name: {{name}}
+    age: {{age}}
+</div>
+
+
+<script>
+
+let el = document.getElementById('div');
+let template = el.innerHTML;
+let _data = {
+    name: 'blue',
+    age: 18
+};
+let data = new Proxy(_data, {
+    set(obj, name, value){
+        obj[name] = value;
+        console.log('数据变了');
+        render();
+    }
+});
+data.name = 'blue2';
+
+function render(){
+        el.innerHTML = template.replace(/\{\{\w+\}\}/g,str=>{
+        str = str.substring(2, str.length-2);
+        return _data[str];
+    });
+}
+
+</script>
+
+
+<!-- 
+
+
+    虚拟dom:
+            合并请求,
+            快速查询,
+            局部刷新
+
+
+ -->
+
+
+
+
+</body>
+</html>

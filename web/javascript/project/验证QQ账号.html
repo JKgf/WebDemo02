@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="请输入QQ号: " id="txt" maxlength="11">
+    <input type="button" id="btn" value="验证">
+
+    <script>
+        var oTxt = document.getElementById("txt");
+        var oBtn = document.getElementById("btn");
+        oBtn.onclick = function(){
+            var val = oTxt.value;
+            if(val == ""){
+                alert("请输入QQ号: ");
+                oTxt.focus();
+                return;
+            }
+            if (val.charCodeAt() == 48){
+                alert("第一个不能为数字0!");
+                oTxt.focus();
+                return;
+            }
+            if(val.length < 5 || val.length > 10){
+                alert("QQ号长度错误!")
+            }
+            for(var i = 0; i < val.length; i++){
+                var valCode = val.charCodeAt(i);
+                if(valCode < 48 || valCode > 57){
+                    alert("验证失败! 第"+(i+1)+"个位置出现错误了");
+                    oTxt.focus();
+                    return;
+                }
+            }
+            alert("验证成功!");
+
+        }
+    </script>
+
+</body>
+</html>

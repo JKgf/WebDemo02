@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>html</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+
+
+
+
+        // var name = 'bcd';
+        // var init = (function(){
+
+        //     var name = 'abc';
+
+        //     function callName(){
+        //         console.log(name);
+        //     }
+            
+        //     return function(){
+        //         callName();
+        //     }
+
+        // }());
+
+        // var initHello = (function(){
+
+        // var name = 123;
+
+        // function callName(){
+        //     console.log(name);
+        // }
+
+        // return function(){
+        //     callName();
+        // }
+
+        // }());
+
+        // init();
+        // initHello();
+
+
+
+
+
+
+
+
+
+        // var hello = {
+        //     smoke : function(){
+        //         console.log("Smoking, ... xuan cool !!!");
+        //         return this;
+        //     },
+        //     drink : function(){
+        //         console.log("drinking..., ye cool!");
+        //         return this;
+        //     },
+        //     perm : function(){
+        //         console.log('perming..., cool!');
+        //         return this;
+        //     }
+        // }
+        // hello.smoke().drink().perm().smoke().perm().drink();
+
+
+
+
+
+
+
+
+
+
+        /*
+            对象的枚举
+        */ 
+
+
+        
+        // var obj = {
+        //     name: "hello",
+        //     age: 123,
+        //     height: 180,
+        //     weight: 75
+        // }
+
+        // for (var prop in obj){
+        //     // console.log(prop + " " + typeof(prop));
+        //     // console.log(obj.prop --> obj['prop']);
+        //     console.log(obj[prop]);
+        // }
+
+
+
+        // var obj1 = {
+        //     a : 123,
+        //     b : 234,
+        //     c : 345
+        // }
+        
+        // for(var key in obj1){
+        //     obj1[key] ++;
+        // }
+
+
+
+
+
+        // var obj = {
+        //     name: "hello",
+        //     age: 123,
+        //     height: 180,
+        //     weight: 75,
+        //     __proto__: {
+        //         lastName: "world"
+        //     }
+        // }
+
+        // Object.prototype.abc = '123';
+
+        // for (var prop in obj){
+        //     if(!obj.hasOwnProperty(prop)){
+        //         console.log(obj[prop]);
+        //     }
+        // }
+
+
+        /*
+                    A instance B
+
+            A 对象是不是B构造函数构造出来的
+    
+            看A对象的原型链上有没有B的原型
+
+        */
+
+        // console.log(Object.prototype.toString.call([]));
+
+
+
+
+        // function foo(){
+        //     bar.apply(null, arguments);
+        // }
+        // function bar(){
+        //     console.log(arguments);
+        // }
+        // foo(1, 2, 3, 4, 5);
+
+
+
+        // console.log(parseInt(3, 8));
+        // console.log(parseInt(3, 2));
+        // console.log(parseInt(3, 0));
+
+
+
+        // function b(x, y, a){
+        //     arguments[2] = 10;
+        //     alert(a);
+        // }
+        // b(1, 2, 3);
+
+        // ,运算符,返回第二个(要加括号)
+        // console.log((1, 2));
+
+
+
+
+        var x = 1;
+        if(function f(){}){
+            x += typeof f;
+        }
+        console.log(x);
+
+
+
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>

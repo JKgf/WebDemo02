@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+
+<!-- 
+                    事件修饰符
+            stop                        禁止冒泡
+            once                        单次事件
+            prevent                     阻止默认事件
+            native                      原生事件(组件)
+            keycode|name                筛选按键
+
+
+            self
+            capture
+
+ -->
+
+
+
+
+
+    
+<!-- 
+    <div id="div1">
+        <input type="text" @keydown.enter="fn()">
+    </div>
+    <script>
+    function fn(){
+        alert("原生");
+    }
+
+    let vm = new Vue({
+        el: "#div1",
+        data: {
+
+        },
+        methods: { 
+            fn(){
+                alert('vue');
+            }
+        }
+    })
+
+    </script> 
+-->
+
+
+
+
+
+<!--        计算属性
+<div id="div1">
+    姓: <input type="text" v-model="familyName"></br>
+    名: <input type="text" v-model="givenName"></br>
+    <input type="text" v-model="name">
+</div>
+<script>
+let vm = new Vue({
+    el: "#div1",
+    data: {
+        familyName: "张",
+        givenName: "三"
+    },
+    computed: {
+        name: {
+            get(){
+                return this.familyName + this.givenName;
+            },
+            set(value){
+                this.familyName = value[0];
+                this.givenName = value.substring(1);
+            }
+        }
+    }
+
+})
+
+</script> -->
+
+
+
+
+
+
+
+</body>
+</html>

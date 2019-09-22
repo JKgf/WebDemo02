@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>还有<span id="num" style="color:red;font-size:20px;">5</span>返回首页</p>
+    <script src="jQuery.js"></script>
+    <script>
+        var num = 5;
+        var time = setInterval(function(){
+            num--;
+            $("#num").innerHTML = num;
+            if(num == 0){
+                clearInterval(time);
+                window.location.href = "http://www.baidu.com";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

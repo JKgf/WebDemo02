@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>查找</title>
+    <style>
+          *{
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            width: 600px;
+            height: auto;
+            margin: 50px auto 10px;
+            border: 1px solid gray;
+            text-indent: 2em;
+        }
+        p{
+            text-align: center;
+        }
+        #txt{
+            height: 28px;
+        }
+        #btn{
+            width: 90px;
+            height: 32px;
+            border-width: 0px;
+            border-radius: 5px; 
+            cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
+            outline: none; /* 不显示轮廓线 */
+            font-family: Microsoft YaHei; /* 设置字体 */
+            color: #f40; /* 字体颜色 */
+            font-size: 20px;
+            background: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的语言，内置支持类型。它的解释器被称为JavaScript引擎，为浏览器的一部分，广泛用于客户端的脚本语言，最早是在HTML（标准通用标记语言下的一个应用）网页上使用，用来给HTML网页增加动态功能。
+在1995年时，由Netscape公司的Brendan Eich，在网景导航者浏览器上首次设计实现而成。因为Netscape与Sun合作，Netscape管理层希望它外观看起来像Java，因此取名为JavaScript。但实际上它的语法风格与Self及Scheme较为接近。 [1] 
+为了取得技术优势，微软推出了JScript，CEnvi推出ScriptEase，与JavaScript同样可在浏览器上运行。为了统一规格，因为JavaScript兼容于ECMA标准，因此也称为ECMAScript。
+    </div>
+    <p>
+        <input type="text" name="" id="txt" placeholder="请输入文字...">
+        <input type="button" value="查询" id="btn">
+    </p>
+
+
+    <script>
+        
+       window.onload = function(){
+
+
+            var oBox = document.getElementById("box");
+            var oTxt = document.getElementById("txt");
+            var oBtn = document.getElementById("btn");
+            var htm = oBox.innerHTML;
+            oBtn.onclick = function(){
+                var target = oTxt.value;
+                serach(htm, target);
+            }
+
+            function serach(htm, target){
+                if(target){
+                    var arr = htm.split(target);
+                    var nstr = arr.join("<span style='color:blue'>"+target+"</span>");
+                    oBox.innerHTML = nstr;
+
+                }else{
+                    oBox.innerHTML = htm;
+                }
+            }
+
+
+
+       }
+
+
+
+
+    </script>
+</body>
+</html>

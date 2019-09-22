@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作用域链,立即执行函数</title>
+</head>
+<body>
+    
+
+    <script>
+
+/*                              闭包
+        当内部函数被保存到外部时,将会生成闭包,闭包会导致原有作用域链不释放,造成内存泄漏.
+*/
+
+    
+    // function a(){
+    //     function b(){
+    //         var bbb = 234;
+    //         console.log(aaa);
+    //     }
+    //     var aaa = 123;
+    //     return b;
+    // }
+    // //  内部的函数保存在了外部会生成闭包
+    // var glob = 100;
+    // var demo =  a();
+    // demo();
+
+
+
+
+
+    // function a(){
+    //     var num = 100;
+    //     function b(){
+    //         num++;
+    //         console.log(num);
+    //     }
+
+    //     return b;
+    // }
+
+    // var demo = a();
+    // demo();// 101
+    // demo();// 102
+
+
+// 闭包的作用
+
+
+    
+    // 实现公有变量:函数累加器
+    // function add(){
+    //     var count = 0;
+    //     function demo(){
+    //         count++;
+    //         console.log(count);
+    //     }
+    //     return demo;
+    // }
+
+    // var counter = add();
+    // counter();counter();counter();counter();
+
+
+
+
+    // 可以做缓存(存储结构):eater
+    // function test(){
+
+    //     var num = 100;
+    //     function a(){
+    //         num++;
+    //         console.log(num);
+    //     }
+    //     function b(){
+    //         num--;
+    //         console.log(num);
+    //     }
+
+    //     return [a, b];
+    // }
+
+    // var myArr = test();
+    // myArr[0]();
+    // myArr[1]();
+
+
+
+
+    // 可以实现封装 ,属性私有化:Person()
+
+
+
+
+    // function Hello(name, wife){
+
+    //     var prepareWife = "xiaozhang";
+
+    //     this.name = name;
+    //     this.wife = wife;
+    //     this.divorce = function (){
+    //         this.wife = prepareWife;
+    //     }
+    //     this.changePrepareWife = function (target){
+    //         prepareWife = target;
+    //     }
+    //     this.sayPrepareWife = function(){
+    //         console.log(prepareWife);
+    //     }
+    // }
+
+    // var hello = new Hello('hello', 'xiaoliu');
+    // console.log(hello.prepareWife);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // 模块化开发,防止污染全局变量
+
+
+
+
+
+// 立即执行函数
+
+    // 针对初始化功能的函数
+    
+    // (function (a,b){
+    //     console.log(a+b);
+    // }(1, 2));
+
+    // var num = (function (a,b){
+    //     return a+b;
+    // }(1, 2));
+    // console.log(num);
+
+
+    // (function(){}()); w3c建议使用第一种
+    // (function(){})();
+    // 只有表达式才能被执行符号执行
+
+    // function test(){
+    //    console.log('a');
+    // }()
+
+    // var test = function(){
+    //     console.log('a');
+    // }();
+    // console.log(test);
+    
+
+    // + function test(){
+    //     console.log('a');
+    // }();
+
+
+
+
+
+    // function test(a, b, c, d){
+    //     console.log(a+b+c+d);
+    // }(1, 2, 3, 4);
+    
+    
+        
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>

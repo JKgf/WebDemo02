@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        
+        // function Person(name, age){
+        //     this.name = name;
+        //     this.age = age;
+        // }
+
+        // Person.prototype.sayName = function(){
+        //     alert(this.name);
+        // }
+
+        // var a = new Person('a', 14);
+        // a.sayName();
+
+
+
+        function SuperType(){
+            this.name = 'super';
+            this.friend = [];
+            this.property = true;
+        }
+        SuperType.prototype.getName = function(){
+            return this.name;
+        }
+        SuperType.prototype.getSuperValue = function(){
+            return this.property;
+        }
+
+        function SubType(name, age){
+            this.name = name;
+            this.age = age;
+            this.subproperty = false;
+        }
+
+        SubType.prototype = new SuperType();
+        SubType.prototype.constructor = SubType;
+        SubType.prototype.getAge = function(){
+            return this.age;
+        }
+        SubType.prototype.getSuperValue = function(){
+            return this.subproperty;
+        }
+
+        var child = new SubType('shiny', 12);
+        console.log(child.getName());
+        console.log(child.getAge());
+
+
+        
+    </script>
+    
+</body>
+</html>

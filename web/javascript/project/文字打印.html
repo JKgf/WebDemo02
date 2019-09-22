@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="text"></div>
+
+    <script>
+
+        var arr = [];
+        arr.push("大家晚上好!");
+        arr.push("哈哈哈");
+        var pos = 0;
+        var strlen = arr[0].length;
+        var index = 0;
+        var len = arr.length;
+        var time = null;
+        var oText = document.getElementById("text");
+        var p = "";
+        var row = 0;
+        function printText(){
+                while(row < index){
+                    p = p + arr[row++] + "<br/>";
+                } 
+                oText.innerHTML =p + arr[index].substring(0, pos);
+                if(strlen == pos){
+                    index++;
+                    pos = 0;
+                    if(index < len){
+                        strlen = arr[index].length;
+                        timer = setTimeout(printText, 100);
+                    }else{
+                        clearTimeout(timer);
+                    }
+                }else{
+                    pos++;
+                    timer = setTimeout(printText, 100);
+                }
+        }
+        printText();
+
+    </script>
+</body>
+</html>
